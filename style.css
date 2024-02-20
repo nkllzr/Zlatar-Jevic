@@ -1,0 +1,433 @@
+/* ------------------------------------ */
+/* Imported basic style of elements */
+@import url(/setup.css);
+/* @import "setup.css"; >>>> drugi nacin */
+
+/* ------------------------------------ */
+/* Progress bar indicator */
+@supports (animation-timeline: "") {
+	.timeline {
+		--height: 0.25em;
+		margin-block-end: calc(var(--height) * -1);
+		height: var(--height);
+		position: sticky;
+		top: 0;
+		left: 0;
+		background-image: (-45deg,
+				var(--highlight),
+				var(--accent-orange));
+		transform-origin: left;
+		transform: scaleX(0%);
+		animation: bar 2s linear both;
+		animation-timeline: timelineBar;
+		z-index: 2;
+	}
+
+	@keyframes bar {
+		to {
+			transform: scaleX(100%);
+		}
+	}
+
+	@scroll-timeline timelineBar {
+		start: selector(body) start 0;
+		end: selector(body) end 1;
+	}
+}
+
+/* ------------------------------------ */
+.mb2 {
+	margin-block-end: 2em;
+	padding: 1em;
+}
+
+/* ------------------------------------ */
+#landing-image {
+	min-height: inherit;
+}
+
+/* ------------------------------------ */
+/* Header */
+header {
+	position: sticky;
+	top: 0;
+	left: 0;
+	background-color: var(--clr-three-menu);
+	z-index: 1;
+}
+
+nav {
+	position: relative;
+	min-height: inherit;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+
+	&>img {
+		width: 4em;
+		aspect-ratio: 4 / 3;
+		background-color: var(--accent-orange);
+		mix-blend-mode: difference;
+		border: 2px solid var(--accent-orange);
+		border-radius: 0.34em;
+	}
+}
+
+#btn-main-ul {
+	display: none;
+}
+
+#main-ul {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-evenly;
+	align-items: center;
+
+	&>li:not(:last-of-type) {
+		position: relative;
+		margin-inline-end: 2em;
+		overflow: hidden;
+	}
+}
+
+.nav-item {
+	font-size: 1.15rem;
+	color: var(--accent-orange);
+}
+
+.link::after {
+	content: "";
+	height: 2px;
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: var(--highlight);
+	transform-origin: right;
+	transform: scaleX(0);
+	transition: transform 130ms linear 200ms;
+}
+
+.link:hover::after {
+	transform-origin: left;
+	transform: scaleX(1);
+}
+
+/* ------------------ */
+/* Dropdown menu */
+#btn-menu {
+	position: relative;
+
+	&:where(:hover, :focus) {
+		-webkit-text-stroke: 0.015em currentColor;
+	}
+
+	&::after {
+		padding-inline-start: 0.3em;
+		content: "\f0d7";
+		font-family: "Font Awesome 5 Free";
+		font-weight: 600;
+	}
+}
+
+/* dropdown li */
+#dropdown {
+	position: relative;
+}
+
+.menu {
+	position: absolute;
+	left: 50%;
+	display: flex;
+	flex-flow: column wrap;
+	background-color: var(--clr-three-menu);
+	border-radius: 0.3em;
+	transform: translateX(-50%);
+	opacity: 0;
+	visibility: hidden;
+	transition-property: transform, opacity, visibility;
+	transition-duration: 300ms;
+	transition-timing-function: linear;
+	transition-delay: 100ms;
+	overflow: hidden;
+}
+
+#btn-menu:focus+.menu {
+	transform: translateX(-50%) translateY(20%);
+	opacity: 1;
+	visibility: visible;
+	box-shadow: 0 0 0 0.05em var(--accent-orange, hsl(37, 77%, 75%));
+}
+
+.menu a {
+	padding-block: 0.75em;
+	padding-inline: 1.56em;
+	width: 100%;
+	white-space: nowrap;
+	color: var(--accent-orange);
+
+	&:hover {
+		background-color: var(--clr-three-menu-hvr);
+	}
+}
+
+/* ------------------ */
+/* Change menu bars and color scheme icons */
+.menu-bars,
+#theme {
+	transform: scale(1.5);
+}
+
+/* ------------------------------------ */
+/* Landing section */
+#landing-image {
+	position: relative;
+	isolation: isolate;
+	height: inherit;
+	display: grid;
+	place-items: end;
+	background: url(/images/watch.jpg) no-repeat fixed center center / cover;
+}
+
+#landing-image::after {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background-image: linear-gradient(to bottom,
+			transparent,
+			hsla(0, 0%, 0%, 0.65));
+	z-index: -1;
+}
+
+#landing-text {
+	font: clamp(2rem, 4rem, 7.5vh) / 2 "Playfair Display", sans-serif;
+	text-align: end;
+	color: var(--golden);
+	transform: translate(-0.5em, -1.2em);
+}
+
+/* ------------------------------------ */
+/* Gallery */
+#gallery {
+	--p: 1em;
+
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(calc(15em - var(--p, 1em)), 20em));
+	grid-auto-rows: minmax(calc(12em - var(--p)), 20em);
+	gap: var(--p, 1em);
+}
+
+.card-holder {
+	perspective: 650px;
+	perspective-origin: center;
+	/* overflow: hidden; */
+}
+
+.card {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	background-color: white;
+	border-radius: 0.34em;
+	transform-style: preserve-3d;
+	transition: transform 500ms linear;
+}
+
+figure {
+	padding: var(--p, 1em);
+	height: 100%;
+	display: flex;
+	flex-flow: column wrap;
+	justify-content: space-between;
+	align-items: center;
+}
+
+figure img {
+	width: 75%;
+	aspect-ratio: 1 / 1;
+}
+
+figcaption {
+	font-weight: bold;
+	color: var(--highlight);
+}
+
+figcaption::after {
+	content: "\f105\ \f105\ \f105";
+	padding-inline-start: 0.75em;
+	font-family: "Font Awesome 5 Free";
+	font-weight: 600;
+	font-size: 0.87rem;
+	color: transparent;
+	background: repeating-linear-gradient(to right,
+			var(--highlight),
+			var(--highlight-pale));
+	background-size: 500%;
+	background-position: 500%;
+	background-clip: text;
+	-webkit-background-clip: text;
+	animation: indicator-arrows 7s linear infinite;
+}
+
+@keyframes indicator-arrows {
+	to {
+		background-position: 0;
+	}
+}
+
+.backface {
+	padding: var(--p);
+	position: absolute;
+	inset-block: calc(var(--p) / 2);
+	inset-inline: var(--p);
+	background-color: var(--clr-three-menu);
+	border-radius: inherit;
+	transform: rotateY(180deg);
+}
+
+.backface>p {
+	font-size: 0.87rem;
+	color: var(--accent-orange);
+}
+
+.backface>button {
+	margin-block-start: 1.5em;
+	padding-block: calc(var(--p) / 4);
+	padding-inline: var(--p);
+	font-size: 1rem;
+	font-weight: bold;
+	color: var(--highlight-pale);
+	background-color: hsl(190, 60%, 50%, 0.3);
+	border: 1px solid currentColor;
+	border-radius: inherit;
+	transition: color 200ms ease-in-out, transform 200ms ease-in-out;
+}
+
+.backface>button:where(:hover, :focus) {
+	transform: scale(1.05);
+	color: var(--accent-orange);
+}
+
+figure,
+.backface {
+	backface-visibility: hidden;
+}
+
+.card-holder:hover>.card {
+	transform: rotateY(180deg);
+}
+
+/* ------------------------------------ */
+/* About us */
+#about-us {
+	display: flex;
+	flex-flow: row wrap;
+	gap: 2em;
+}
+
+/* Article about us and our businness */
+#article-about-us {
+	flex: 1 1 46em;
+	columns: 2 19em;
+	column-rule: 2px dotted var(--clr-three-menu);
+	column-gap: 2.5em;
+}
+
+#article-about-us>h3 {
+	margin-block-end: 0.5em;
+	column-span: all;
+}
+
+#article-about-us>p:not(:last-of-type) {
+	margin-block-end: 1em;
+}
+
+/* Informations about how you can contact us */
+#aside-about-us {
+	margin-block: auto;
+	padding: 4vh;
+	position: relative;
+	isolation: isolate;
+	flex: 0 1;
+	background-color: var(--accent-one);
+	border-radius: 0.5em;
+}
+
+#aside-about-us::before {
+	content: "";
+	position: absolute;
+	inset: 1em;
+	background-color: var(--golden);
+	border-radius: inherit;
+	opacity: 0.3;
+	z-index: -1;
+}
+
+#aside-about-us>address>p {
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+	white-space: nowrap;
+	color: var(--clr-three-menu);
+}
+
+/* Brands */
+#list-of-brands {
+	height: 100%;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-evenly;
+	align-items: center;
+	gap: 1em 3em;
+}
+
+#list-of-brands figure {
+	width: 100px;
+}
+
+#list-of-brands img {
+	object-fit: fill;
+	aspect-ratio: 2 / 1;
+}
+
+/* ------------------------------------ */
+/* Footer */
+#footer {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	background-color: var(--accent-one);
+}
+
+#footer>p {
+	font: bold 2rem "Playfair Display", sans-serif;
+	color: var(--accent-two);
+}
+
+#social-networks {
+	display: flex;
+	flex-flow: row wrap;
+	gap: 2em;
+}
+
+.sn-item {
+	--scale: 1.5;
+	color: var(--accent-two);
+	transform: scale(var(--scale));
+	transition: color, transform, 200ms linear;
+}
+
+.sn-item:hover {
+	--scale: 1.75;
+	color: var(--accent-orange);
+}
+
+@media only screen and (max-width: 25.95em) {
+	#footer {
+		padding-block: 1em;
+		flex-flow: column wrap;
+		justify-content: space-around;
+	}
+
+	#footer>p {
+		font-size: 1.5rem;
+	}
+}

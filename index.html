@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Jewlery</title>
+	<!-- Font family Montserrat -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap" rel="stylesheet">
+	<!-- Font family Playfair Display -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+		integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<!-- Color scheme -->
+	<meta name="color-scheme" content="light">
+	<!-- Icon -->
+	<link rel="icon" sizes="16x16" type="image/x-icon" href="./images/icon/favicon.ico">
+	<!-- CSS -->
+	<link rel="stylesheet" href="style.css">
+	<!-- CSS for only screen below 51.5em -->
+	<!--! ubaciti mediaQuery.css u glavni css -->
+	<link rel="stylesheet" href="mediaQuery.css" media="only screen and (max-width: 51.5em)">
+	<!-- JS -->
+	<script src="./script.js" defer></script>
+</head>
+
+<body>
+	<!-- Progress bar indicator -->
+	<div class="timeline"></div>
+
+	<!-- Navigation -->
+	<header>
+		<nav>
+			<img src="/images/brand-watch.gif" alt="brand watch picture" />
+			<button type="button" id="btn-main-ul"><i class="fas fa-bars menu-bars"></i></button>
+			<ul id="main-ul">
+				<li><a href="#gallery" class="nav-item link">Proizvodi</a></li>
+				<li><a href="#about-us" class="nav-item link">O nama</a></li>
+				<li><a href="#footer" class="nav-item link">Dalji dogovor</a></li>
+				<li id="dropdown">
+					<button type="button" class="nav-item" id="btn-menu">Menu</button>
+					<ul class="menu">
+						<li><a href="#" target="blank">link 1</a>
+						</li>
+						<li><a href="#" target="blank">link 2</a></li>
+						<li><a href="#" target="blank">link 3</a></li>
+						<li><a href="#" target="blank">link 4</a></li>
+					</ul>
+				</li>
+			</ul>
+			<button type="button" id="btnColorScheme" title="Change to dark theme">
+				<i class="fas fa-adjust" id="theme"></i>
+			</button>
+		</nav>
+	</header>
+
+	<!-- Landing section -->
+	<main>
+		<section id="landing-image">
+			<h2 id="landing-text">What's the time?<br>-It's time to check the time.</h2>
+		</section>
+	</main>
+
+	<!-- Gallery -->
+	<section id="gallery" class="mb2">
+		<!-- Appended through JS
+			<div class="card-holder">
+				<div class="card">
+					<figure>
+						<img src="/images/w1.png" alt="London smart watch" loading="lazy">
+						<figcaption>London smart watch</figcaption>
+					</figure>
+					<div class="backface">
+						<p>
+							Prefinjen dizajn, kvalitet, najsavremenije tehnologije, kreativnost i umetnost, dobicete sve u
+							jednom
+							satu.
+						</p>
+						<button type="button" class="order">Poručite</button>
+					</div>
+				</div>
+			</div>
+		-->
+	</section>
+
+	<!-- Info section -->
+	<section id="about-us" class="mb2">
+		<article id="article-about-us">
+			<h3>About us</h3>
+			<p>
+				Stručna obrada materijala i precizna izrada odlikuju ovaj porodični posao, započet pre 7
+				godina, i kao rezultat
+				daju tehnički i estetski kvalitetan komad nakita. Pored postojećih modela, moguća je i izrada unikatnog
+				nakita, po
+				narudžbini, na osnovu Vaše ideje, uz konsultaciju majstora. <em><q>Pegasus Jewlery</q></em> nastavlja da
+				se razvija i
+				raste ali uvek
+				ostaje verna principima kojih se drži od svog osnivanja: integritet, poverenje i vrhunski kvalitet
+				proizvoda.
+			</p>
+			<p>
+				Grupa mladih ljudi je bila spremna i odlučna da na trzištu satova i nakita ponudi nešto novo. Koncept
+				multibrend radnje
+				koja ce na jednom mestu spojiti renomirane svetske brendove i uz izvanrednu i profesionalnu uslugu biti
+				adresa na kojoj
+				ce Vaše zadovoljstvo biti merilo naseg uspeha. Luksuzni kao i manje-luksuzni brendovi predstavljaju samo
+				deo
+				bogate ponude gde ce vecina ljubitelja satova uvek pronaci interesantan model. Iako za ručni sat stoji
+				da je jedini
+				prihvatljiv komad nakita za modernog poslovnog coveka, pripadnicama lepseg pola u našim radnjama je na
+				raspolaganju
+				pregršt brendova kao sto su Michael Kors, FOSSIL, CAVALLI, GUESS koji pored satova nude i prefinjene
+				komade nakita. Kolekcija ima mnogo, kao i Vaših želja! Uvek nastojimo da maksimalno stručno i iskreno
+				pomognemo u
+				odabiru modela za Vas
+				i Vase najdraže.
+			</p>
+			<p>
+				Posebno mesto u našoj ponudi su usluge našeg servisa, koji je do sada velikom
+				broju
+				"dragih uspomena"
+				vratio sjaj i udahnuo novi život. Vaš osmeh, zadovoljstvo i stisak ruke daju nam energiju da nastavimo
+				ovim putem i
+				budemo još bolji. Daćemo sve od sebe da kvalitet naših usluga bude kao i vreme-konstantno i bez prekida.
+			</p>
+		</article>
+		<aside id="aside-about-us">
+			<address>
+				<p>Grad: Beograd</p>
+				<p>Ulica: </p>
+				<p>Telefon: </p>
+			</address>
+		</aside>
+	</section>
+
+	<!-- Form -->
+	<section>
+		<form target="" id="clientData" class="mb2" action="" method="POST" enctype="multipart/form-data">
+			<div class="form-group">
+				<label for="userName">Korisničko ime</label>
+				<input id="userName" type="text" name="userName" required>
+			</div>
+			<div class="form-group">
+				<label for="email">E-mail</label>
+				<input id="email" type="email" name="email" required>
+			</div>
+			<div class="form-group">
+				<label for="uploadFile">Priložite fajl</label>
+				<input id="uploadFile" type="file" name="uploadFile" accept="image/*, .pdf" capture="environment" multiple>
+			</div>
+			<div class="form-group">
+				<label for="descriptionOfProduct">Opis</label>
+				<textarea id="descriptionOfProduct" name="descriptionOfProduct" cols="30" rows="10"
+					placeholder="Upisite precizniji opis zahteva..."></textarea>
+			</div>
+			<div class="form-group">
+				<input id="submitForm" type="submit" name="submitForm" value="Send">
+				<input id="resetForm" type="reset" name="resetForm" value="Clear">
+			</div>
+		</form>
+	</section>
+
+	<!-- Footer -->
+	<footer id="footer">
+		<p>Zlatar Jević 2024</p>
+		<ul id="social-networks">
+			<li title="facebook">
+				<a href="https://facebook.com">
+					<i class="fab fa-facebook sn-item"></i>
+				</a>
+			</li>
+			<li title="instagram">
+				<a href="https://instagram.com">
+					<i class="fab fa-instagram sn-item"></i>
+				</a>
+			</li>
+			<li title="twitter">
+				<a href="https://twitter.com">
+					<i class="fab fa-twitter sn-item"></i>
+				</a>
+			</li>
+		</ul>
+	</footer>
+</body>
+
+</html>

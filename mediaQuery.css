@@ -1,0 +1,60 @@
+#main-ul {
+  flex-flow: column wrap;
+  position: absolute;
+  top: 100%;
+  text-align: center;
+  background-color: var(--clr-three-menu);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 200ms linear;
+}
+
+#main-ul>li {
+  width: 100%;
+}
+
+#main-ul>li:not(:last-of-type) {
+  margin: 0;
+}
+
+#main-ul>li>.nav-item {
+  width: inherit;
+}
+
+/* ------------------ */
+/* Menu visible */
+#btn-main-ul {
+  display: initial;
+}
+
+/* remove Menu button from nav */
+#btn-menu {
+  display: none;
+}
+
+.menu {
+  width: 100%;
+  top: 100%;
+  border-radius: 0 0 0.3em 0.3em;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.menu a {
+  padding-block: 0.25em;
+  padding-inline: 0;
+  font-size: 1.15rem;
+  color: var(--accent-orange);
+}
+
+#btn-main-ul:focus+#main-ul {
+  width: 100%;
+  opacity: 1;
+  visibility: visible;
+}
+
+#btn-main-ul:focus+#main-ul>#dropdown .menu {
+  border-top: 1px solid hsl(0, 0%, 50%);
+  opacity: 1;
+  visibility: visible;
+}

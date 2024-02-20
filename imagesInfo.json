@@ -1,0 +1,20 @@
+[
+	{
+		"cardImage": {
+			"src": "/images/w1.png",
+			"alt": "London smart watch"
+		},
+		"cardDescription": {
+			"description": "Prefinjen dizajn, kvalitet, najsavremenije tehnologije, kreativnost i umetnost, dobicete sve u jednom satu."
+		}
+	},
+	{
+		"cardImage": {
+			"src": "/images/w1.png",
+			"alt": "London smart watch"
+		},
+		"cardDescription": {
+			"description": "Prefinjen dizajn, kvalitet, najsavremenije tehnologije, kreativnost i umetnost, dobicete sve u jednom satu."
+		}
+	}
+]
